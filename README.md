@@ -274,6 +274,12 @@ row = rows.fetchRow()
 ? "Name (string): " + row.getStringValue(2)
 ? "Price (float): " + row.getFloatValue(3)
 ? "Data (blob): " + row.getBlobValue(4)
+nullableVal = row.getValue(5)
+if isNull(nullableVal)
+	? "Nullable: NULL"
+else
+	? "Nullable: " + nullableVal
+ok
 
 # Cleanup
 conn.disconnect()
